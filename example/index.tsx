@@ -5,7 +5,9 @@ import { Thing } from '../.';
 
 const App = () => {
   return (
-    <div>
+    <div> 
+      <h1>Type Hashtags : </h1>
+      
       <Thing />
     </div>
   );
