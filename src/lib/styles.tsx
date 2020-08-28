@@ -1,11 +1,11 @@
 
-import styled  from 'styled-components';
+import styled from 'styled-components';
 
 export const HTContainer = styled.div`
   position: relative;
   width:100%;
   min-height:150px;
-  border:2px solid blue;
+  border:2px solid #e2e8f0;
   overflow-x:hidden;
   overflow-y:hidden;
   background-color: #fff;
@@ -46,6 +46,7 @@ export const HTTextArea = styled.textarea`
     outline: none;
     white-space: pre-wrap !important;
     word-wrap: break-word !important;
+    padding: 3px;
 `
 
 export const HTGhost = styled.div`
@@ -68,6 +69,7 @@ width: auto !important;
     outline: none;
     white-space: pre-wrap !important;
     word-wrap: break-word !important;
+    padding: 3px;
 
     .ht-spell {
       position: relative;
@@ -83,8 +85,35 @@ width: auto !important;
       width:100%;
       height: 2px;
       background-color: #f56;
-      z-index: 1;
+      z-index: 2;
       }
     }
    
+`
+
+
+export const HTPopup = styled.div<{x?: number, y?:number}>`
+    position: fixed;
+    min-width: 100px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    z-index: 9999;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    top:${p => p.y}px;
+    left:${p=> p.x}px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    font-size: .8rem;
+    color: #4a5568;
+    & > p {
+        border-bottom: 1px solid #ededed;
+        padding:3px 4px;
+        cursor: pointer;
+        &:hover {
+            color:#2b6cb0;
+        }
+        &:last-child {
+            border-bottom: none
+        }
+    }
 `
