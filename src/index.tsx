@@ -174,17 +174,20 @@ export const HighlightTextArea: React.FC<HTProps> = ({defaultValue = '', highlig
             
 
             let _editorInputEvent = document.createEvent("HTMLEvents");
-            _editorInputEvent.initEvent("input", false, true);
+            _editorInputEvent.initEvent("input", true, true);
             editor.current.dispatchEvent(_editorInputEvent);
 
-            let  nativeInputValue = Object.getOwnPropertyDescriptor(window.HTMLTextAreaElement.prototype,"value")
-            if(nativeInputValue) {
+            // let  nativeInputValue = Object.getOwnPropertyDescriptor(window.HTMLTextAreaElement.prototype,"value")
+            // if(nativeInputValue) {
 
-              let nativeInputSetter = nativeInputValue.set
-              nativeInputSetter?.call(editor.current,'ddd');
-              var ev2 = new Event('input', { bubbles: true});
-              editor.current.dispatchEvent(ev2);
-            }
+            //   let nativeInputSetter = nativeInputValue.set
+            //   nativeInputSetter?.call(editor.current,ghost.current?.textContent || '');
+            
+            //   var ev2 = new Event('input', { bubbles: true});
+            //   editor.current.dispatchEvent(ev2);
+            // }
+
+            
            
            
           }
